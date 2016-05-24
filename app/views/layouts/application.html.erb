@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Kintore</title>
+  <%= stylesheet_link_tag gulp_asset_path('front.bundle.css') %>
+  <%= yield :css if content_for?(:css) %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <%= yield %>
+  <%= javascript_include_tag gulp_asset_path('front.bundle.js') %>
+  <%= yield :javascript if content_for?(:javascript) %>
+</body>
+</html>
