@@ -8,7 +8,7 @@
                 <div class="nav__list nav__list--left logo">
                     <a href="" class=""></a>
                 </div>
-              
+
             </div>
         </div>
     </nav>
@@ -18,6 +18,7 @@
         <div class="hero hero__bg">
             <div class="hero__wrapper">
                 <div class="hero__message">Praesent ac sem eget est egestas volutpat. Nullam accumsan lorem in dui.</div>
+
                 <a href="#modal_create" role="button" class="btn btn-lg btn-primary" data-toggle="modal">Create</a>
                 <a href="#modal_login" role="button" class="btn btn-lg btn-primary" data-toggle="modal">Login</a>
 
@@ -32,12 +33,40 @@
                       </div>
                       <div class="modal-body">
                         <!-- modalの表示部分 -->
-                        <pre>test</pre>
+                          <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                              <%= form_for(@user) do |f| %>
+                              <%= f.label :name ,{class: 'label_form'}%>
+                              <%= f.text_field :name %>
 
+                              <%= f.label :login ,{class: 'label_form'}%>
+                              <%= f.text_field :login %>
+
+                              <%= f.label :password_hash ,{class: 'label_form'}%>
+                              <%= f.password_field :password_hash %>
+
+                              <%= f.label :password_salt ,{class: 'label_form'}%>
+                              <%= f.password_field :password_salt %>
+
+                              <%= f.select :sex, {'男' => 1 , '女' => 2} %>
+
+                              <%= f.label :height ,{class: 'label_form'}%>
+                              <%= f.number_field :height %>
+
+                              <%= f.label :weight ,{class: 'label_form'}%>
+                              <%= f.number_field :weight %>
+
+                              <%= f.select :body_type, {'痩せ型' => 1 , '細マッチョ' => 2,'ガチムチ' =>3} %>
+
+                              <%= f.submit "Create my account", class: "btn btn-primary" %>
+
+                              <% end %>
+                            </div>
+                          </div>
+                        <!-- modalの表示部分 -->
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
-                        <button type="button" class="btn btn-primary">保存</button>
                       </div>
                     </div><!-- /.modal-content -->
                   </div><!-- /.modal-dialog -->
