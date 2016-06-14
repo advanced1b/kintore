@@ -5,10 +5,10 @@ class User < ActiveRecord::Base
 
   validates :login,
             presence: true,
-            length: { minimum: 6 }
+            length: { minimum: 6,maximum: 15 }
 
   validates :password_digest,
-            length: { minimum: 6 }
+            length: { minimum: 6,maximum: 15 }
 
   validates :sex, presence: true
 

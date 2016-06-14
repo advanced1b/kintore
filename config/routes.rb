@@ -4,6 +4,7 @@ Kintore::Application.routes.draw do
     post 'login' => 'sessions#login', as: :login
     get  'logout' => 'sessions#logout', as: :logout
 
+
     resources :menus, only: :index
     resources :users
   end
