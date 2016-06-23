@@ -11,26 +11,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160517004156) do
+ActiveRecord::Schema.define(version: 20160531051348) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "categories", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "customers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "menus", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",                  limit: 255
+    t.text     "description",           limit: 65535
+    t.integer  "condition_weight_from", limit: 4
+    t.integer  "condition_weight_to",   limit: 4
+    t.integer  "condition_height_from", limit: 4
+    t.integer  "condition_height_to",   limit: 4
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
+  create_table "traning_menus", force: :cascade do |t|
+    t.integer  "traning_id", limit: 4
+    t.integer  "menu_id",    limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "traning_menus", ["menu_id"], name: "index_traning_menus_on_menu_id", using: :btree
+  add_index "traning_menus", ["traning_id"], name: "index_traning_menus_on_traning_id", using: :btree
+
+  create_table "tranings", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.text     "description", limit: 65535
+    t.string   "url",         limit: 255
+    t.integer  "part",        limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "user_menus", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "menu_id",    limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "user_menus", ["menu_id"], name: "index_user_menus_on_menu_id", using: :btree
+  add_index "user_menus", ["user_id"], name: "index_user_menus_on_user_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name",            limit: 255
+    t.string   "login",           limit: 255
+    t.string   "password_digest", limit: 255
+    t.integer  "sex",             limit: 4
+    t.integer  "height",          limit: 4
+    t.integer  "weight",          limit: 4
+    t.integer  "body_type",       limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_foreign_key "traning_menus", "menus"
+  add_foreign_key "traning_menus", "tranings"
+  add_foreign_key "user_menus", "menus"
+  add_foreign_key "user_menus", "users"
 end

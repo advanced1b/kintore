@@ -5,13 +5,7 @@
                 <div class="nav__list nav__list--left logo">
                     <a href="" class=""></a>
                 </div>
-                <div class="nav__list nav__list--right">
-                    <li class="nav__item"><a href="" title="">HOME</a></li>
-                    <li class="nav__item"><a href="" title="">PORTFORIO</a></li>
-                    <li class="nav__item"><a href="" title="">ACCESS</a></li>
-                    <li class="nav__item"><a href="" title="">CONTACT</a></li>
-                    <li class="nav__item"><a href="" title="">CONTACT</a></li>
-                </div>
+
             </div>
         </div>
     </nav>
@@ -21,9 +15,96 @@
         <div class="hero hero__bg">
             <div class="hero__wrapper">
                 <div class="hero__message">Praesent ac sem eget est egestas volutpat. Nullam accumsan lorem in dui.</div>
-                <a href="#" class="hero__btn">いいね</a>
-                <a href="#" class="hero__btn">いいね</a>
-            </div>
+
+                <a href="#modal_create" role="button" class="btn btn-lg btn-primary" data-toggle="modal">Create</a>
+                <a href="#modal_login" role="button" class="btn btn-lg btn-primary" data-toggle="modal">Login</a>
+
+                <!-- モーダルウィンドウの本体 -->
+                <div id="modal_create" class="modal fade">
+
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">ユーザー情報登録</h4>
+                      </div>
+                      <div class="modal-body">
+                        <!-- modalの表示部分 -->
+                          <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                              <%= form_for(@user) do |f| %>
+                              <%= f.label :name ,{class: 'label_form'}%>
+                              <%= f.text_field :name %>
+
+                              <%= f.label :login ,{class: 'label_form'}%>
+                              <%= f.text_field :login %>
+
+                              <%= f.label :password_digest ,{class: 'label_form'}%>
+                              <%= f.password_field :password_digest %>
+
+                              <%= f.label :password_confirmation ,{class: 'label_form'}%>
+                              <%= f.password_field :password_confirmation %>
+
+                              <%= f.select :sex, {'男' => 1 , '女' => 2} %>
+                              <p></p>
+
+                              <%= f.label :height ,{class: 'label_form'}%>
+                              <%= f.number_field :height %>
+
+                              <%= f.label :weight ,{class: 'label_form'}%>
+                              <%= f.number_field :weight %>
+
+                              <%= f.select :body_type, {'痩せ型' => 1 , '細マッチョ' => 2,'ガチムチ' =>3} %>
+
+                              <%= f.submit "Create my account", class: "btn btn-primary" %>
+
+                              <% end %>
+                            </div>
+                          </div>
+                        <!-- modalの表示部分 -->
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+                      </div>
+                    </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+
+                </div>
+                <!-- モーダルウィンドウの本体 -->
+                <div id="modal_login" class="modal fade">
+
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">ユーザー情報登録</h4>
+                      </div>
+                      <div class="modal-body">
+                        <div class="row">
+                          <div class="col-md-6 col-md-offset-3">
+                            <%= form_for(@user) do |f| %>
+                            <%= f.label :login ,{class: 'label_form'}%>
+                            <%= f.text_field :login %>
+
+                            <%= f.label :password_digest ,{class: 'label_form'}%>
+                            <%= f.text_field :password_digest %>
+
+                            <%= f.submit "Login", class: "btn btn-primary" %>
+
+                            <% end %>
+                          </div>
+                        </div>
+
+
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+                        <button type="button" class="btn btn-primary">保存</button>
+                      </div>
+                    </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+
+                </div>
         </div>
     </section>
 </main>

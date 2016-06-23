@@ -14,3 +14,8 @@
 
 /node_modules
 /test
+
+db/scheme.rb
+# Ignore node_modules | bower_components
+/bower_components
+/node_modules
