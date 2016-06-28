@@ -4,6 +4,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'mysql2','0.3.20'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'devise' # ユーザー認証
 
 # gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
@@ -21,6 +23,8 @@ gem 'pry-rails'
 gem 'pry-byebug'
 gem 'quiet_assets'
 
+gem 'bootstrap-sass'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'bullet'
@@ -73,5 +77,3 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-fontawesome','4.3.0'
   gem 'rails-assets-simple-line-icons','2.2.3'
 end
-
-

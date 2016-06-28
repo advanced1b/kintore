@@ -1,0 +1,12 @@
+/Users/Katsuya/.rvm/rubies/ruby-2.2.4/bin/ruby -r ./siteconf20160628-44707-1ogcz6r.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling ruby_http_parser.c
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.bundle
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 ruby_http_parser.bundle ./.gem.20160628-44707-1l7qsh7

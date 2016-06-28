@@ -82,12 +82,12 @@
                       <div class="modal-body">
                         <div class="row">
                           <div class="col-md-6 col-md-offset-3">
-                            <%= form_for(@user) do |f| %>
+                            <%= form_for(:session,url:login_path) do |f| %>
                             <%= f.label :login ,{class: 'label_form'}%>
                             <%= f.text_field :login %>
 
                             <%= f.label :password_digest ,{class: 'label_form'}%>
-                            <%= f.text_field :password_digest %>
+                            <%= f.password_field :password_digest ,class:'form-control'%>
 
                             <%= f.submit "Login", class: "btn btn-primary" %>
 

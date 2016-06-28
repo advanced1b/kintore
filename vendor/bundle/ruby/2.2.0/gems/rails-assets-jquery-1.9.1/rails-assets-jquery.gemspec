@@ -1,0 +1,23 @@
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'rails-assets-jquery/version'
+
+Gem::Specification.new do |spec|
+  spec.name          = "rails-assets-jquery"
+  spec.version       = RailsAssetsJquery::VERSION
+  spec.authors       = ["rails-assets.org"]
+  spec.description   = "jQuery component"
+  spec.summary       = "jQuery component"
+  spec.homepage      = "https://github.com/jquery/jquery-dist"
+  spec.license       = "MIT"
+
+  spec.files         = `find ./* -type f | cut -b 3-`.split($/)
+  spec.require_paths = ["lib"]
+
+
+    spec.post_install_message = "This component doesn't define main assets in bower.json.\nPlease open new pull request in component's repository:\nhttps://github.com/jquery/jquery-dist"
+
+  spec.add_development_dependency "bundler", "~> 1.3"
+  spec.add_development_dependency "rake"
+end
