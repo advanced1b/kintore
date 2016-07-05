@@ -1,0 +1,12 @@
+/*
+ * admin_panel/form.css
+ *= require select2
+ *= require theme_styles
+ */
+
+button.btn.red.btn-lg.m-icon-big {
+  padding-left: 50px;
+}
+a.btn.grey-cascade {
+  padding-right: 35px;
+}
