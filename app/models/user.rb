@@ -5,10 +5,8 @@ class User < ActiveRecord::Base
 
   validates :login,
             presence: true,
-            length: { minimum: 6,maximum: 15 }
-
-  validates :password_digest,
-            length: { minimum: 6,maximum: 15 }
+            length: { minimum: 6,maximum: 15 },
+            format: { with: /\A[a-z0-9]+\z/i }
 
   validates :sex,numericality: {
     only_integer: true,greater_than_or_equal_to:1,less_than_or_equal_to:2
@@ -20,4 +18,13 @@ class User < ActiveRecord::Base
   validates :body_type,numericality: {
     only_integer: true,greater_than_or_equal_to:1,less_than_or_equal_to:3
   }
+
+  validate :custom_validate
+
+  def custom_validate
+    if self.password.present?
+      return errors.add(:password, "パスワードが短すぎます") if self.password.length <= 6
+      return errors.add(:password, "パスワードが短すぎます") if self.password.length >= 15
+    end
+  end
 end
