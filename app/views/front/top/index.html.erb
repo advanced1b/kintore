@@ -42,8 +42,8 @@
                               <%= f.label :login ,{class: 'label_form'}%>
                               <%= f.text_field :login ,class:'form-control'%>
 
-                              <%= f.label :password_digest ,{class: 'label_form'}%>
-                              <%= f.password_field :password_digest,class: 'form-control' %>
+                              <%= f.label :password ,{class: 'label_form'}%>
+                              <%= f.password_field :password,class: 'form-control' %>
 
                               <%= f.label :password_confirmation ,{class: 'label_form'}%>
                               <%= f.password_field :password_confirmation,class:'form-control' %>
@@ -86,6 +86,7 @@
                         <div class="row">
                           <div class="col-md-6 col-md-offset-3">
                             <%= form_for(:session,url:login_path) do |f| %>
+                            <%= render 'shared/error_messages' %>
                             <%= f.label :login ,{class: 'label_form'}%>
                             <%= f.text_field :login ,class:'form-control'%>
 

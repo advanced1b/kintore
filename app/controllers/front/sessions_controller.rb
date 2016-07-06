@@ -9,11 +9,12 @@ class Front::SessionsController < FrontController
     p user
     if user.present? && user.authenticate(session_params[:password])
       session[:user_id] = user.id
-      redirect_to controller: 'users',action: 'index'
+      redirect_to user
+      flash.now[:warning]="Login success"
     else
       Rails.logger.info("[Login Fail] #{session_params[:login]} from #{request.remote_ip} at #{Time.now.to_s(:db)}")
       flash.now[:notice] = ["指定したアカウントは存在しません。"]
-      redirect_to root_path
+      
 
     end
   end
