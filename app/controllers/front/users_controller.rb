@@ -1,6 +1,6 @@
 class Front::UsersController < FrontController
 
-  layout "front"
+  layout false
 
   def show
     @user = User.find(params[:id])

@@ -18,25 +18,25 @@
 	overflow:hidden;
 }
 .va-slice-1{
-	background:#000 url(../images/ベンチプレス2.jpg) no-repeat center center;
+	background:#000 url("images/users/1.jpg") no-repeat center center;
 }
 .va-slice-2{
-	background:#000 url(../images/ダンベル.jpg) no-repeat center center;
+	background:#000 url(images/users/2.jpg) no-repeat center center;
 }
 .va-slice-3{
-	background:#000 url(../images/腹筋.jpg) no-repeat center center;
+	background:#000 url(images/users/3.jpg) no-repeat center center;
 }
 .va-slice-4{
-	background:#000 url(../images/大腿筋.jpg) no-repeat center center;
+	background:#000 url(images/users/4.jpg) no-repeat center center;
 }
 .va-slice-5{
-	background:#000 url(../images/背筋.jpg) no-repeat center center;
+	background:#000 url(images/users/5.jpg) no-repeat center center;
 }
 .va-slice-6{
-	background:#000 url(../images/) no-repeat center center;
+	background:#000 url(images/users/6.jpg) no-repeat center center;
 }
 .va-slice-7{
-	background:#000 url(../images/) no-repeat center center;
+	background:#000 url(images/users/7.jpg) no-repeat center center;
 }
 .va-slice-color-1{
 	background-color:#97c5eb;
@@ -99,7 +99,7 @@
 .va-nav span{
 	width:40px;
 	height:25px;
-	background:transparent url(../images/prev.png) no-repeat center center;
+	background:transparent url(images/prev.png) no-repeat center center;
 	position:absolute;
 	top:-35px;
 	left:50%;
@@ -111,7 +111,7 @@
 	z-index:100;
 }
 .va-nav span.va-nav-next{
-	background-image:url(../images/next.png);
+	background-image:url(images/next.png);
 	top:auto;
 	bottom:-35px;
 }
