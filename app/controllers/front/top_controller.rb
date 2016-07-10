@@ -1,4 +1,7 @@
 class Front::TopController < FrontController
+
+  layout "front"
+
   def index
     @user = User.new
   end
