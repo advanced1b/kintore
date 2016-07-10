@@ -1,0 +1,82 @@
+<div class="form-group form-md-line-input">
+    <label class="col-md-2 control-label">トレーニング名</label>
+    <div class="col-md-4">
+        <%= f.text_field :name, class: "form-control",placeholder: "トレーニング名" %>
+        <div class="form-control-focus"> </div>
+    </div>
+</div>
+
+<div class="form-group form-md-line-input">
+    <label class="col-md-2 control-label">トレーニング詳細</label>
+    <div class="col-md-4">
+        <%= f.text_field :description, class: "form-control",placeholder: "トレーニング詳細" %>
+        <div class="form-control-focus"> </div>
+    </div>
+</div>
+
+<div class="form-group form-md-line-input">
+    <label class="col-md-2 control-label">URL</label>
+    <div class="col-md-4">
+        <%= f.text_field :url, class: "form-control",placeholder: "URL" %>
+        <div class="form-control-focus"> </div>
+    </div>
+</div>
+
+
+<div class="form-group form-md-line-input">
+    <label class="col-md-2 control-label">部位</label>
+    <div class="col-md-4">
+        <div class="md-radio-inline">
+
+            <div class="md-radio">
+                <%= f.radio_button :part, PART[:arm], checked: "checked",class: "md-radiobtn" %>
+                <label for="training_part_1">
+                    <span></span>
+                    <span class="check"></span>
+                    <span class="box"></span>腕
+                </label>
+            </div>
+            <div class="md-radio">
+                <%= f.radio_button :part, PART[:shoulder], checked: "checked",class: "md-radiobtn" %>
+                <label for="training_part_2">
+                    <span></span>
+                    <span class="check"></span>
+                    <span class="box"></span>肩
+                </label>
+            </div>
+            <div class="md-radio">
+                <%= f.radio_button :part, PART[:bust], checked: "checked",class: "md-radiobtn" %>
+                <label for="training_part_3">
+                    <span></span>
+                    <span class="check"></span>
+                    <span class="box"></span>胸
+                </label>
+            </div>
+
+            <div class="md-radio">
+                <%= f.radio_button :part, PART[:back], checked: "checked",class: "md-radiobtn" %>
+                <label for="training_part_4">
+                    <span></span>
+                    <span class="check"></span>
+                    <span class="box"></span>背筋
+                </label>
+            </div>
+            <div class="md-radio">
+                <%= f.radio_button :part, PART[:abs], checked: "checked",class: "md-radiobtn" %>
+                <label for="training_part_5">
+                    <span></span>
+                    <span class="check"></span>
+                    <span class="box"></span>腹筋
+                </label>
+            </div>
+            <div class="md-radio">
+                <%= f.radio_button :part, PART[:leg], checked: "checked",class: "md-radiobtn" %>
+                <label for="training_part_6">
+                    <span></span>
+                    <span class="check"></span>
+                    <span class="box"></span>足
+                </label>
+            </div>
+        </div>
+    </div>
+</div>

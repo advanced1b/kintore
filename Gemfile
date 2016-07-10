@@ -20,15 +20,20 @@ gem 'pry-rails'
 gem 'pry-byebug'
 gem 'quiet_assets'
 
-gem 'bootstrap-sass'
-gem 'font-awesome-rails'
+gem 'gimei'
+gem 'faker'
+gem 'ffaker'
+gem 'faker-japanese'
+gem 'factory_girl_rails'
+
+
+# gem 'bootstrap-sass'
+# gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'bullet'
   gem 'byebug'
-  gem 'faker'
-  gem 'ffaker'
-  gem 'factory_girl_rails'
+  gem 'better_errors'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'guard-livereload', require: false
@@ -46,11 +51,16 @@ group :development do
 end
 
 source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap','3.3.5'
+  gem 'rails-assets-bootstrap-switch', '3.3.2'
+  gem 'rails-assets-bootstrap-hover-dropdown'
+  gem 'rails-assets-bootstrap-select', '1.6.3'
+  gem 'rails-assets-bootstrap-markdown', '2.9.0'
+  gem 'rails-assets-bootstrap-tagsinput'
+  gem 'rails-assets-bootstrap-tabdrop', '1.0.0'
   gem 'rails-assets-jquery', '1.9.1'
   gem 'rails-assets-jquery-migrate', '1.2.1'
   gem 'rails-assets-jquery-ui','1.11.2'
-  gem 'rails-assets-bootstrap-hover-dropdown'
-  gem 'rails-assets-bootstrap','3.3.5'
   gem 'rails-assets-jquery-slimscroll','1.3.2'
   gem 'rails-assets-jquery.cookie', '1.3.1'
   gem 'rails-assets-jquery.uniform'

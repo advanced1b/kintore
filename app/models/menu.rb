@@ -1,10 +1,13 @@
 class Menu < ActiveRecord::Base
-has_many :tranings, through: :traning_menus
-has_many :traning_menus, dependent: :destroy
 
+  has_many :trainings, through: :training_menus
+  has_many :training_menus, dependent: :destroy
 
+  attr_accessor :training_attributes
   validates :name,
-    length: {maximum: 255}
+            presence: true,
+            length: {maximum: 255}
   validates :description,
-    length: {maximum: 65535}
+            presence: true,
+            length: {maximum: 65535}
 end

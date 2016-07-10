@@ -1,0 +1,120 @@
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="portlet light ">
+                    <div class="portlet-title">
+                        <div class="caption font-green-haze">
+                            <i class="icon-settings font-green-haze"></i>
+                            <span class="caption-subject bold uppercase">ユーザ登録</span>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <%= form_for @training, url: {action: :create, controller: :trainings}, html: {id: 'training_form', class: 'training_form form-horizontal margin-bottom-40'} do |f| %>
+                        <div class="form-group form-md-line-input">
+                            <label class="col-md-2 control-label">トレーニング名</label>
+                            <div class="col-md-4">
+                                <%= f.text_field :name, class: "form-control",placeholder: "トレーニング名" %>
+                                <div class="form-control-focus"> </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-md-line-input">
+                            <label class="col-md-2 control-label">トレーニング詳細</label>
+                            <div class="col-md-4">
+                                <%= f.text_field :description, class: "form-control",placeholder: "トレーニング詳細" %>
+                                <div class="form-control-focus"> </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-md-line-input">
+                            <label class="col-md-2 control-label">URL</label>
+                            <div class="col-md-4">
+                                <%= f.text_field :url, class: "form-control",placeholder: "URL" %>
+                                <div class="form-control-focus"> </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group form-md-line-input">
+                            <label class="col-md-2 control-label">部位</label>
+                            <div class="col-md-offset-2 col-md-4">
+                                <div class="md-radio-inline">
+
+                                    <div class="md-radio">
+                                        <%= f.radio_button :part, PART[:arm], checked: "checked",class: "md-radiobtn" %>
+                                        <input type="checkbox" id="checkbox1111" class="md-check">
+                                        <label for="checkbox1111">
+                                            <span></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span>腕
+                                        </label>
+                                    </div>
+                                    <div class="md-radio">
+                                        <%= f.radio_button :part, PART[:shoulder], checked: "checked",class: "md-radiobtn" %>
+                                        <input type="checkbox" id="checkbox1111" class="md-check">
+                                        <label for="checkbox1111">
+                                            <span></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span>肩
+                                        </label>
+                                    </div>
+                                    <div class="md-radio">
+                                        <%= f.radio_button :part, PART[:bust], checked: "checked",class: "md-radiobtn" %>
+                                        <input type="checkbox" id="checkbox1111" class="md-check">
+                                        <label for="checkbox1111">
+                                            <span></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span>胸
+                                        </label>
+                                    </div>
+
+                                    <div class="md-radio">
+                                        <%= f.radio_button :part, PART[:back], checked: "checked",class: "md-radiobtn" %>
+                                        <input type="checkbox" id="checkbox1111" class="md-check">
+                                        <label for="checkbox1111">
+                                            <span></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span>背筋
+                                        </label>
+                                    </div>
+                                    <div class="md-radio">
+                                        <%= f.radio_button :part, PART[:abs], checked: "checked",class: "md-radiobtn" %>
+                                        <input type="checkbox" id="checkbox1111" class="md-check">
+                                        <label for="checkbox1111">
+                                            <span></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span>腹筋
+                                        </label>
+                                    </div>
+                                    <div class="md-radio">
+                                        <%= f.radio_button :part, PART[:leg], checked: "checked",class: "md-radiobtn" %>
+                                        <input type="checkbox" id="checkbox1111" class="md-check">
+                                        <label for="checkbox1111">
+                                            <span></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span>足
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <button type="button" class="btn blue">登録する</button>
+                            </div>
+                        </div>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% content_for(:javascript) do %>
+<%= javascript_include_tag 'trainings/index' %>
+<% end %>
+<% content_for(:css) do %>
+<%= stylesheet_link_tag 'trainings/index', media: "all" %>
+<% end %>

@@ -1,0 +1,29 @@
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="portlet light ">
+                    <div class="portlet-title">
+                        <div class="caption font-green-haze">
+                            <i class="icon-settings font-green-haze"></i>
+                            <span class="caption-subject bold uppercase">メニュー編集</span>
+                        </div>
+                    </div>
+                    <%= form_for @menu, url: {action: :create, controller: :menus}, html: {id: 'menu_form', class: 'menu_form form-horizontal margin-bottom-40'} do |f| %>
+
+                    <div class="portlet-body">
+                        <%= render 'admin/menus/form' ,f: f %>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <button type="button" class="btn blue">編集する</button>
+                            </div>
+                        </div>
+                    </div>
+                    <% end %>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

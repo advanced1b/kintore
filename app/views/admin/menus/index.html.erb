@@ -1,0 +1,47 @@
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="portlet light ">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="icon-social-dribbble font-green"></i>
+                            <span class="caption-subject font-green bold uppercase">メニュー一覧</span>
+                        </div>
+
+                        <div class="actions">
+                            <a class="btn btn-circle btn-icon-only btn-default" href="<%= new_admin_menu_path %>">
+                                <i class="icon-wrench"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="table-scrollable">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>メニュー名</th>
+                                        <th>処理</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if @menus.present? %>
+                                    <% @menus.each do |menu| %>
+                                    <tr>
+                                        <td><%= menu.name %></td>
+                                        <td>
+                                            <%= link_to '編集', edit_admin_menu_path(menu), class: "label label-sm label-info" %>
+                                            <%= link_to '削除', admin_menu_path(menu),method: :delete, class: "label label-sm label-danger" %>
+                                        </td>
+                                    </tr>
+                                    <% end %>
+                                    <% end %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

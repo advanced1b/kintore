@@ -1,0 +1,3 @@
+<% if flash[:notice] %>
+  <div id="toastr" class="notice" data-status="<%= flash.now[:notice][0] %>"  data-msg="<%= flash.now[:notice][1] %>" data-url="<%= flash.now[:notice][2] %>"></div>
+<% end %>

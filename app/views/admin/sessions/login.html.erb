@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="ja">
+<!--<![endif]-->
+<meta charset="utf-8"/>
+<title>Admin</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+<%= stylesheet_link_tag 'admin', media: 'all' %>
+<%= stylesheet_link_tag 'admin/login/index' , media: "all" %>
+</head>
+<body class=" login">
+    <div class="user-login-5">
+        <div class="row bs-reset">
+            <div class="col-xs-6 login-container bs-reset">
+                <img class="login-logo login-6" src="/images/admin/logo-top.png" />
+                <div class="login-content">
+                    <%= render 'shared/admin/error' %>
+                    <%= form_tag({controller: :sessions, action: :create},id: "login-form", class: 'login-form') do %>
+                    <h3 class="form-title">
+                        <span class="form-subtitle">ログイン画面</span>
+                    </h3>
+                    <div class="row">
+                        <div class="form-group col-xs-6">
+                            <%= text_field_tag :login, params[:login], class: "form-control form-control-solid placeholder-no-fix form-group", placeholder: "ログインID" %>
+                            <div class="form-control-focus"></div>
+                        </div>
+                        <div class="form-group col-xs-6">
+                            <%= password_field_tag :password, params[:password], class: "form-control form-control-solid placeholder-no-fix form-group", placeholder: "パスワード" %>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-8 text-right form-actions">
+                            <button class="btn blue" type="submit">ログイン</button>
+                        </div>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+            <div class="col-xs-6 bs-reset">
+                <div class="login-bg"> </div>
+            </div>
+        </div>
+    </div>
+    <%= javascript_include_tag 'admin' %>
+    <%= javascript_include_tag 'login/index'  %>
+</body>
+</html>

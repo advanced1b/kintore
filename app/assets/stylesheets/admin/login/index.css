@@ -1,0 +1,11 @@
+/*
+ *= require base/pages/login-5
+ *= require base/pages/error
+*/
+
+.form-control-solid{
+  background: #fff !important;
+}
+body{
+  background: #fff !important;
+}
