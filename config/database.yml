@@ -51,4 +51,5 @@ production:
   <<: *default
   database: Kintore_production
   username: Kintore
+  encoding: utf8mb4
   password: <%= ENV['KINTORE_DATABASE_PASSWORD'] %>
