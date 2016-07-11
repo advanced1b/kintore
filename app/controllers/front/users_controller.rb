@@ -5,6 +5,7 @@ class Front::UsersController < FrontController
   def show
     @user = User.find(params[:id])
 
+
   end
 
   def create
@@ -20,6 +21,6 @@ class Front::UsersController < FrontController
 
   private
     def user_params
-      params.require(:user).permit(:name, :login, :password,:sex,:height,:weight,:body_type,:password_confirmation)
+      params.require(:user).permit(:name, :login, :password,:sex,:height,:weight,:body_type,:password_confirmation,:term)
     end
 end

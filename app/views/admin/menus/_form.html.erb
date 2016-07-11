@@ -14,6 +14,37 @@
     </div>
 </div>
 
+<div class="form-group form-md-line-input">
+    <label class="col-md-2 control-label">体重条件開始</label>
+    <div class="col-md-4">
+        <%= f.number_field :condition_weight_from, class: "form-control",placeholder: "体重条件開始" %>
+        <div class="form-control-focus"> </div>
+    </div>
+</div>
+
+<div class="form-group form-md-line-input">
+    <label class="col-md-2 control-label">体重条件終了</label>
+    <div class="col-md-4">
+        <%= f.number_field :condition_weight_to, class: "form-control",placeholder: "体重条件終了" %>
+        <div class="form-control-focus"> </div>
+    </div>
+</div>
+
+<div class="form-group form-md-line-input">
+    <label class="col-md-2 control-label">身長条件開始</label>
+    <div class="col-md-4">
+        <%= f.number_field :condition_height_from, class: "form-control",placeholder: "身長条件開始" %>
+        <div class="form-control-focus"> </div>
+    </div>
+</div>
+
+<div class="form-group form-md-line-input">
+    <label class="col-md-2 control-label">身長条件終了</label>
+    <div class="col-md-4">
+        <%= f.number_field :condition_height_to, class: "form-control",placeholder: "身長条件終了" %>
+        <div class="form-control-focus"> </div>
+    </div>
+</div>
 
 <div class="form-group form-md-line-input">
     <label class="col-xs-3 control-label form__label">トレーニング<span class="required">*</span></label>

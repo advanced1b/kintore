@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
+  
 
   validates :name,presence:true
   validates :password,length: {minimum: 6}
@@ -19,6 +20,8 @@ class User < ActiveRecord::Base
   validates :body_type,numericality: {
     only_integer: true,greater_than_or_equal_to:1,less_than_or_equal_to:3
   }
+
+  validates :term,presence: true
 
   validate :custom_validate
 

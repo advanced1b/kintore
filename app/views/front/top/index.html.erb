@@ -57,7 +57,11 @@
                               <%= f.label :weight ,{class: 'label_form'}%>
                               <%= f.number_field :weight ,class:'form-control'%>
 
+                              <%= f.label :body_type ,{class: 'label_form'}%>
                               <%= f.select :body_type, {'痩せ型' => 1 , '細マッチョ' => 2,'ガチムチ' =>3} %>
+                              
+                              <%= f.label :term ,{class: 'label_form'}%>
+                              <%= f.select :term,{'週２'=>1,'週３'=>2,'週４'=>3} %>
 
                               <%= f.submit "Create my account", class: "btn btn-primary" %>
 

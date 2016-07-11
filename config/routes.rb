@@ -14,6 +14,7 @@ Kintore::Application.routes.draw do
   namespace :admin do
     get 'login' => 'sessions#login', as: :login
     get 'logout' => 'sessions#logout', as: :logout
+    
 
     resources :sessions, only: :create
     resources :users
