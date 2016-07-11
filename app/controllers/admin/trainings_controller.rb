@@ -23,7 +23,7 @@ class Admin::TrainingsController < AdminController
   end
 
   def update
-    @training = Training.find_by_id(training_params[:id])
+    @training = Training.find_by_id(params[:id])
     @training.attributes = training_params
     if @training.save
       flash[:notice] = ["success", "作成しました。"]
