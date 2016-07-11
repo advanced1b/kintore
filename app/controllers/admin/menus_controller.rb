@@ -29,8 +29,9 @@ class Admin::MenusController < AdminController
   end
 
   def update
-    @menu = Menu.find_by_id(menu_params[:id])
+    @menu = Menu.find_by_id(params[:id])
     @menu.attributes = menu_params
+    @menu.trainings  = menu_params[:training_attributes].present? ? Training.find(menu_params[:training_attributes]) : []
     if @menu.save
       flash[:notice] = ["success", "作成しました。"]
       redirect_to admin_menus_path

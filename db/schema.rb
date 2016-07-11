@@ -28,6 +28,9 @@ ActiveRecord::Schema.define(version: 20160531051348) do
     t.integer  "condition_weight_to",   limit: 4
     t.integer  "condition_height_from", limit: 4
     t.integer  "condition_height_to",   limit: 4
+    t.integer  "condition_sex",         limit: 4
+    t.integer  "condition_term",        limit: 4
+    t.integer  "condition_body_type",   limit: 4
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end

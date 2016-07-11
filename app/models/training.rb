@@ -3,7 +3,7 @@ class Training < ActiveRecord::Base
   validates :name, presence:true
   validates :description,
             presence: true,
-            length:{minimum: 10,maximum: 140}
+            length:{maximum: 140}
 
   validates :url,
             presence: true

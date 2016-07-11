@@ -3,12 +3,12 @@ class Front::UsersController < FrontController
   layout false
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by_id(params[:id])
+    @trainings = Menu.find_by_id(@user.menus[0].id).trainings if @user.menus.present?
   end
 
   def create
     @user = User.new(user_params)
-
       if @user.save
         redirect_to @user
       else

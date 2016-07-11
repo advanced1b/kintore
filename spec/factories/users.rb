@@ -4,6 +4,7 @@ FactoryGirl.define do
     password "password"
     login    "login1"
     sex      1
+    term     1
     height   160
     weight  60
     body_type 1

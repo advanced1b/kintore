@@ -14,9 +14,61 @@
     </div>
 </div>
 
+<div class="form-group form-md-line-input">
+    <label class="col-md-2 control-label">体重条件開始</label>
+    <div class="col-md-4">
+        <%= f.number_field :condition_weight_from, class: "form-control",placeholder: "体重条件開始" %>
+        <div class="form-control-focus"> </div>
+    </div>
+</div>
 
 <div class="form-group form-md-line-input">
-    <label class="col-xs-3 control-label form__label">トレーニング<span class="required">*</span></label>
+    <label class="col-md-2 control-label">体重条件終了</label>
+    <div class="col-md-4">
+        <%= f.number_field :condition_weight_to, class: "form-control",placeholder: "体重条件終了" %>
+        <div class="form-control-focus"> </div>
+    </div>
+</div>
+
+<div class="form-group form-md-line-input">
+    <label class="col-md-2 control-label">身長条件開始</label>
+    <div class="col-md-4">
+        <%= f.number_field :condition_height_from, class: "form-control",placeholder: "身長条件開始" %>
+        <div class="form-control-focus"> </div>
+    </div>
+</div>
+
+<div class="form-group form-md-line-input">
+    <label class="col-md-2 control-label">身長条件終了</label>
+    <div class="col-md-4">
+        <%= f.number_field :condition_height_to, class: "form-control",placeholder: "身長条件終了" %>
+        <div class="form-control-focus"> </div>
+    </div>
+</div>
+<div class="form-group form-md-line-input">
+    <label class="col-md-2 control-label">性別条件</label>
+    <div class="col-md-4">
+        <%= f.select :condition_sex, {'男' => 1 , '女' => 2}, class:"form-control" %>
+        <div class="form-control-focus"> </div>
+    </div>
+</div>
+<div class="form-group form-md-line-input">
+    <label class="col-md-2 control-label">トレーニング可能日数</label>
+    <div class="col-md-4">
+        <%= f.select :condition_term, {'週2' => 1 , '週3' =>2, '週4以上' => 3}, class: "form-control" %>
+        <div class="form-control-focus"> </div>
+    </div>
+</div>
+<div class="form-group form-md-line-input">
+    <label class="col-md-2 control-label">目的</label>
+    <div class="col-md-4">
+        <%= f.select :condition_body_type, {'筋力UP' => 1 , 'ダイエットor減量' =>2}, class: "form-control" %>
+        <div class="form-control-focus"> </div>
+    </div>
+</div>
+
+<div class="form-group form-md-line-input">
+    <label class="col-xs-2 control-label form__label">トレーニング<span class="required">*</span></label>
     <div class="col-xs-7">
         <div class="form-md-checkboxes">
             <% if @trainings.present? %>

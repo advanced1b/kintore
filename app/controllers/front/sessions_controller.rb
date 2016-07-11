@@ -18,8 +18,7 @@ class Front::SessionsController < FrontController
   # ログアウト
   def logout
     session[:user_id] = nil
-    flash[:notice] = ["ログアウトしました。"]
-    redirect_to "login_url"
+    redirect_to root_path
   end
 
   private

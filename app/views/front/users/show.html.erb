@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,110 +12,47 @@
     <%= stylesheet_link_tag 'user',media: 'all','data-turbolinks-track'=> true %>
     <%= csrf_meta_tags %>
 </head>
+
 <body>
     <header>
         <table width=100%>
             <td>
-                <div id="logo">
-                    <a href="#"><img src="logo.png" widht="200" height="50"></a>
-                </div>
-            </td>
-            <td>
                 <div id="header">
-                    <li><a href="#">ログアウト</a></li>
+                    <li><a href="<%= logout_path %>">ログアウト</a></li>
                 </div>
             </td>
         </table>
     </header>
 
+
     <div class="container">
-        <h1><%= @user.name %>'s menu</h1>
+        <h1>メニュー名 <%= @user.menus.first.try(:name) %></h1>
         <div id="va-accordion" class="va-container">
-            <div class="va-nav">
-                <span class="va-nav-prev">Previous</span>
-                <span class="va-nav-next">Next</span>
-            </div>
-            <div class="va-wrapper">
-                <div class="va-slice va-slice-1">
-                    <h3 class="va-title">Menu name x</h3>
-                    <div class="va-content">
-                        <ul>
-                            <li><a class="inline" href="#inline-content">About</a></li>
-                            <li><a href="https://www.youtube.com/embed/MVZpTFEgMBY" class="youtube" title=""> MOVIE </a></li>
-                            <li><a href="#">back</a></li>
-                        </ul>
+            <div class="va-wrapper" style="min-height: 100px;">
+                <% if @trainings.present? %>
+                    <% @trainings.each_with_index do |training,index| %>
+                    <div style="display: none;">
+                        <section id="inline-content_<%= index %>">
+                            <p class="description"><%= training.try(:description) %></p>
+                        </section>
                     </div>
-                </div>
-                <div class="va-slice va-slice-2">
-                    <h3 class="va-title">Menu name x</h3>
-                    <div class="va-content">
-                        <ul>
-                            <li><a class="inline" href="#inline-content">About</a></li>
-                            <li><a href="https://www.youtube.com/embed/MVZpTFEgMBY" class="youtube" title=""> MOVIE </a></li>
-                            <li><a href="#">back</a></li>
-                        </ul>
+
+                    <div class="va-slice va-slice-1">
+                        <h3 class="va-title"><%= training.name %></h3>
+                        <div class="va-content">
+                            <ul>
+                                <li><a class="inline" href="#inline-content_<%= index %>">説明</a></li>
+                                <li><a href="<%= training.try(:url) %>" class="youtube" title=""> 動画 </a></li>
+                                <li><a href="#">閉じる</a></li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="va-slice va-slice-3">
-                    <h3 class="va-title">Menu name x</h3>
-                    <div class="va-content">
-                        <ul>
-                            <li><a class="inline" href="#inline-content">About</a></li>
-                            <li><a href="https://www.youtube.com/embed/MVZpTFEgMBY" class="youtube" title=""> MOVIE </a></li>
-                            <li><a href="#">back</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="va-slice va-slice-4">
-                    <h3 class="va-title">Menu name x</h3>
-                    <div class="va-content">
-                        <ul>
-                            <li><a class="inline" href="#inline-content">About</a></li>
-                            <li><a href="https://www.youtube.com/embed/MVZpTFEgMBY" class="youtube" title=""> MOVIE </a></li>
-                            <li><a href="#">back</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="va-slice va-slice-5">
-                    <h3 class="va-title">Menu name x</h3>
-                    <div class="va-content">
-                        <ul>
-                            <li><a class="inline" href="#inline-content">About</a></li>
-                            <li><a href="https://www.youtube.com/embed/MVZpTFEgMBY" class="youtube" title=""> MOVIE </a></li>
-                            <li><a href="#">back</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="va-slice va-slice-6">
-                    <h3 class="va-title">Menu name x</h3>
-                    <div class="va-content">
-                        <ul>
-                            <li><a class="inline" href="#inline-content">About</a></li>
-                            <li><a href="https://www.youtube.com/embed/MVZpTFEgMBY" class="youtube" title=""> MOVIE </a></li>
-                            <li><a href="#">back</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="va-slice va-slice-7">
-                    <h3 class="va-title">Menu name x</h3>
-                    <div class="va-content">
-                        <ul>
-                            <li><a class="inline" href="#inline-content">About</a></li>
-                            <li><a href="https://www.youtube.com/embed/MVZpTFEgMBY" class="youtube" title=""> MOVIE </a></li>
-                            <li><a href="#">back</a></li>
-                        </ul>
-                    </div>
-                </div>
+                    <% end %>
+                <% end %>
             </div>
         </div>
     </div>
 
-    <div style="display: none;">
-        <section id="inline-content">
-            <h3>インラインhtml</h3>
-            <p>モーダルで表示されていますが、私はあなたのすぐ下にいます。。気づいて。。</p>
-        </section>
-    </div>
     <%= javascript_include_tag 'user' %>
 
     <script type="text/javascript">
@@ -122,14 +60,18 @@
             $(".youtube").colorbox({
                 iframe:true,
                 innerWidth:600,
-                innerHeight:400
+                innerHeight:400,
             });
             $(function() {
                 $(".inline").colorbox({
                     inline:true,
-                    maxWidth:"90%",
-                    maxHeight:"90%",
-                    opacity: 0.7
+                    innerWidth: true,
+                    innerHeight: true,
+                    initialWidth: 300,
+                    initialHeight: 150,
+                    width: 300,
+                    height: 150,
+                    opacity: 1.0
                 });
             });
 

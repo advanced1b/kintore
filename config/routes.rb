@@ -15,9 +15,10 @@ Kintore::Application.routes.draw do
     get 'login' => 'sessions#login', as: :login
     get 'logout' => 'sessions#logout', as: :logout
 
+
     resources :sessions, only: :create
     resources :users
-    resources  :trainings
-    resources  :menus
+    resources :trainings
+    resources :menus
   end
 end
