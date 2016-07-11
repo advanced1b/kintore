@@ -1,0 +1,32 @@
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="portlet light ">
+                    <div class="portlet-title">
+                        <div class="caption font-green-haze">
+                            <i class="icon-settings font-green-haze"></i>
+                            <span class="caption-subject bold uppercase">トレーニング編集</span>
+                        </div>
+                    </div>
+                    <%= form_for @training, url: {action: :update, controller: :trainings}, html: {id: 'training_form', class: 'training_form form-horizontal margin-bottom-40'} do |f| %>
+                    <div class="portlet-body">
+                        <%= render 'admin/trainings/form', f: f %>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <button type="submit" class="btn blue">編集する</button>
+                            </div>
+                        </div>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% content_for(:javascript) do %>
+<%= javascript_include_tag 'trainings/index' %>
+<% end %>
+<% content_for(:css) do %>
+<%= stylesheet_link_tag 'trainings/index', media: "all" %>
+<% end %>

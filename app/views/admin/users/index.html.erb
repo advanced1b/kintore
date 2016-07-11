@@ -1,0 +1,50 @@
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="portlet light ">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="icon-social-dribbble font-green"></i>
+                            <span class="caption-subject font-green bold uppercase">ユーザ一覧</span>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="table-scrollable">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>名前</th>
+                                        <th>ログインID</th>
+                                        <th>性別</th>
+                                        <th>体型</th>
+                                        <th>処理</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if @users.present? %>
+                                    <%= @users.each do |user| %>
+                                    <tr>
+                                        <td><%= user.id %></td>
+                                        <td><%= user.name %></td>
+                                        <td><%= user.login %></td>
+                                        <td><%= user.sex %></td>
+                                        <td>
+                                            <%= link_to '編集' [:edit, :admin, user], class: "label label-sm label-success" %>
+                                            <%= link_to '削除' [:edit, :admin, user], class: "label label-sm label-success" %>
+                                        </td>
+                                    </tr>
+                                    <% end %>
+                                    <% end %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% content_for(:css) do %>
+<%= stylesheet_link_tag 'admin/users/index', media: "all" %>
+<% end %>

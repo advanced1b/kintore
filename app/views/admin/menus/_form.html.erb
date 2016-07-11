@@ -1,0 +1,38 @@
+<div class="form-group form-md-line-input">
+    <label class="col-md-2 control-label">メニュー名</label>
+    <div class="col-md-4">
+        <%= f.text_field :name, class: "form-control",placeholder: "メニュー名" %>
+        <div class="form-control-focus"> </div>
+    </div>
+</div>
+
+<div class="form-group form-md-line-input">
+    <label class="col-md-2 control-label">メニュー説明</label>
+    <div class="col-md-4">
+        <%= f.text_field :description, class: "form-control",placeholder: "メニュー説明" %>
+        <div class="form-control-focus"> </div>
+    </div>
+</div>
+
+
+<div class="form-group form-md-line-input">
+    <label class="col-xs-3 control-label form__label">トレーニング<span class="required">*</span></label>
+    <div class="col-xs-7">
+        <div class="form-md-checkboxes">
+            <% if @trainings.present? %>
+            <% @trainings.each do |training| %>
+            <div class="md-checkbox">
+                <%= f.check_box :training_attributes, {multiple: true,checked: @training_ids.include?(training.id), class: "md-check", include_hidden: false}, training.id %>
+                <label for="menu_training_attributes_<%= training.id %>">
+                    <span></span>
+                    <span class="check"></span>
+                    <span class="box"></span>
+                    <%= training.name %>
+                </label>
+            </div>
+            <% end %>
+            <% end %>
+        </div>
+    </div>
+</div>
+

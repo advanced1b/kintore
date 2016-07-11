@@ -1,0 +1,9 @@
+/*
+ * advanced-tables.css
+ * select2はcomponents-dropdownsで使用している為コメント化
+ * require select2/dist/css/select2.min
+ *
+ *= require datatables-scroller
+ *= require datatables-colreorder
+ *= require datatables
+ */

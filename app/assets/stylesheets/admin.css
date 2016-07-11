@@ -1,0 +1,14 @@
+/*
+ ****************  ライブラリ    ****************
+ *= require fontawesome
+ *= require simple-line-icons/css/simple-line-icons
+ *= require bootstrap
+ *= require toastr
+
+ *= require theme_styles
+ *= require jquery.uniform/themes/default/css/uniform.default.scss
+*/
+
+.page-content {
+    min-height: 1200px !important;
+}

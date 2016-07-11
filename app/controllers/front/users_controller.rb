@@ -1,6 +1,6 @@
 class Front::UsersController < FrontController
 
-  layout "front"
+  layout false
 
   def show
     @user = User.find(params[:id])
@@ -18,13 +18,8 @@ class Front::UsersController < FrontController
       end
   end
 
-  
-
   private
-
     def user_params
       params.require(:user).permit(:name, :login, :password,:sex,:height,:weight,:body_type,:password_confirmation)
     end
-
-
 end

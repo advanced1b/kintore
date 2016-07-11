@@ -1,0 +1,51 @@
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="portlet light ">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="icon-social-dribbble font-green"></i>
+                            <span class="caption-subject font-green bold uppercase">トレーニング一覧</span>
+                        </div>
+
+                        <div class="actions">
+                            <a class="btn btn-circle btn-icon-only btn-default" href="<%= new_admin_training_path %>">
+                                <i class="icon-wrench"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="table-scrollable">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>トレーニング名</th>
+                                        <th>説明</th>
+                                        <th>部位</th>
+                                        <th>処理</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if @trainings.present? %>
+                                    <% @trainings.each do |training| %>
+                                    <tr>
+                                        <td><%= training.name %></td>
+                                        <td><%= training.description %></td>
+                                        <td><%= training.part %></td>
+                                        <td>
+                                            <%= link_to '編集', edit_admin_training_path(training), class: "label label-sm label-info" %>
+                                            <%= link_to '削除', admin_training_path(training),method: :delete, class: "label label-sm label-danger" %>
+                                        </td>
+                                    </tr>
+                                    <% end %>
+                                    <% end %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
