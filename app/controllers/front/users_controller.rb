@@ -4,6 +4,7 @@ class Front::UsersController < FrontController
 
   def show
     @user = User.find(params[:id])
+    @traning = Traning.all
   end
 
   def create
