@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :sex
       t.integer :height
       t.integer :weight
+      t.integer :term
       t.integer :body_type
       t.timestamps null: false
     end

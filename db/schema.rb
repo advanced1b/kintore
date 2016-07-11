@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20160531051348) do
     t.integer  "sex",             limit: 4
     t.integer  "height",          limit: 4
     t.integer  "weight",          limit: 4
+    t.integer  "term",            limit: 4
     t.integer  "body_type",       limit: 4
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
