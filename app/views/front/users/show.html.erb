@@ -42,6 +42,9 @@
                             <ul>
                                 <li><a class="inline" href="#inline-content_<%= index %>">説明</a></li>
                                 <li><a href="<%= training.try(:url) %>" class="youtube" title=""> 動画 </a></li>
+                                <% if training.url2.present? %>
+                                    <li><a href="<%= training.try(:url2) %>" class="youtube" title=""> 動画 </a></li>
+                                <% end %>
                                 <li><a href="#">閉じる</a></li>
                             </ul>
                         </div>
