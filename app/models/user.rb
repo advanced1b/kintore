@@ -40,6 +40,7 @@ class User < ActiveRecord::Base
   end
 
   def create_user_menu
+    p self
     menu = Menu.all
     menu = menu.where(condition_sex: self.sex)
     menu = menu.where(condition_term: self.term)

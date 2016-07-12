@@ -1,0 +1,39 @@
+{
+  "name": "rails-assets-jquery.uniform",
+  "downloads": null,
+  "version": "2.2.2",
+  "version_downloads": null,
+  "platform": "ruby",
+  "authors": "rails-assets.org",
+  "info": "A jQuery plugin to make your form controls look how you want them to. Now with HTML-5 attributes!",
+  
+  "licenses": "MIT",
+  
+  "metadata": {
+
+  },
+  "sha": null,
+  "project_uri": "http://opensource.audith.org/uniform",
+  "gem_uri": null,
+  "homepage_uri": "http://opensource.audith.org/uniform",
+  "wiki_uri": null,
+  "documentation_uri": null,
+  "mailing_list_uri": null,
+  "source_code_uri": "http://opensource.audith.org/uniform",
+  "bug_tracker_uri": null,
+  "dependencies": {
+    "development": [
+    
+    
+    {
+      "name": "rails-assets-jquery",
+      "requirements": ">= 1.6", "< 2"
+    },
+    
+    
+    ],
+    "runtime": [
+
+    ]
+  }
+}

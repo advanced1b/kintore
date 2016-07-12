@@ -1,19 +1,20 @@
+
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
-    <title>Kintore</title>
+    <title>Vertical Sliding Accordion with jQuery</title>
     <meta charset="UTF-8" />
-    <meta name="description" content="Kintore" />
+    <meta name="description" content="Vertical Sliding Accordion with jQuery" />
     <meta name="keywords" content="jquery, accordion, sliding, vertical, css3, hover, animation, slide, navigation" />
     <meta name="author" content="Codrops" />
-    <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow&v1' rel='stylesheet' type='text/css' />
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&v2' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&v1' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&v2' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag 'user',media: 'all','data-turbolinks-track'=> true %>
     <%= csrf_meta_tags %>
 </head>
 
 <body>
-    <header>
+     <header>
         <table width=100%>
             <td>
                 <div id="header">
@@ -21,7 +22,9 @@
                 </div>
             </td>
         </table>
-    </header>
+    </header> 
+
+
 
 
     <div class="container">
@@ -42,9 +45,6 @@
                             <ul>
                                 <li><a class="inline" href="#inline-content_<%= index %>">説明</a></li>
                                 <li><a href="<%= training.try(:url) %>" class="youtube" title=""> 動画 </a></li>
-                                <% if training.url2.present? %>
-                                    <li><a href="<%= training.try(:url2) %>" class="youtube" title=""> 動画 </a></li>
-                                <% end %>
                                 <li><a href="#">閉じる</a></li>
                             </ul>
                         </div>

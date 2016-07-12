@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160531051348) do
+ActiveRecord::Schema.define(version: 20160712040801) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "name",            limit: 255
@@ -28,11 +28,11 @@ ActiveRecord::Schema.define(version: 20160531051348) do
     t.integer  "condition_weight_to",   limit: 4
     t.integer  "condition_height_from", limit: 4
     t.integer  "condition_height_to",   limit: 4
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.integer  "condition_sex",         limit: 4
     t.integer  "condition_term",        limit: 4
     t.integer  "condition_body_type",   limit: 4
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
   end
 
   create_table "training_menus", force: :cascade do |t|
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20160531051348) do
     t.integer  "part",        limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.string   "url2",        limit: 255
   end
 
   create_table "user_menus", force: :cascade do |t|
@@ -71,10 +72,10 @@ ActiveRecord::Schema.define(version: 20160531051348) do
     t.integer  "sex",             limit: 4
     t.integer  "height",          limit: 4
     t.integer  "weight",          limit: 4
-    t.integer  "term",            limit: 4
     t.integer  "body_type",       limit: 4
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.integer  "term",            limit: 4
   end
 
   add_foreign_key "training_menus", "menus"

@@ -29,13 +29,13 @@
                     <div class="form-group col-xs-12">
                         <label class="col-xs-5 form__label">パスワード</label>
                         <div class="col-xs-5">
-                            <%= f.text_field :password,class:'form-control', placeholder: "パスワード" %>
+                            <%= f.password_field :password,class:'form-control', placeholder: "パスワード" %>
                         </div>
                     </div>
                     <div class="form-group col-xs-12">
                         <label class="col-xs-5 form__label">パスワード(確認)</label>
                         <div class="col-xs-5">
-                            <%= f.text_field :password_confirmation,class:'form-control', placeholder: "パスワード(確認)" %>
+                            <%= f.password_field :password_confirmation,class:'form-control', placeholder: "パスワード(確認)" %>
                         </div>
                     </div>
                     <div class="form-group col-xs-12">
@@ -70,7 +70,7 @@
                     </div>
                     <div class="modal__footer">
                         <button type="button" data-dismiss="modal" class="btn">キャンセル</button>
-                        <button type="submit" class="btn">ログイン</button>
+                        <button type="submit" class="btn">登録</button>
                     </div>
                 </div>
             </div>

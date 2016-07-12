@@ -3,7 +3,7 @@ class CreateTrainings < ActiveRecord::Migration
     create_table :trainings do |t|
       t.string  :name
       t.text    :description
-      t.string  :url   #https://www.youtube.com/embed/{ID}
+      t.string  :url  #https://www.youtube.com/embed/2VRaGrxZLt8
       t.integer :part
       t.timestamps null: false
     end

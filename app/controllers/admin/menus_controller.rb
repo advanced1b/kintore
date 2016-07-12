@@ -21,9 +21,11 @@ class Admin::MenusController < AdminController
     @menu.trainings = menu_params[:training_attributes].present? ? Training.find(menu_params[:training_attributes]) : []
     if @menu.save
       flash[:notice] = ["success", "作成しました。"]
+      #flash[:success] = ["success","作成しました"]
       redirect_to admin_menus_path
     else
       flash[:notice] = ["error", "失敗しました。"]
+      #flash[:error] = ["error","失敗しました"]
       redirect_to new_admin_menu_path
     end
   end
