@@ -30,8 +30,8 @@
                                         <td><%= user.login %></td>
                                         <td><%= user.sex %></td>
                                         <td>
-                                            <%= link_to '編集' [:edit, :admin, user], class: "label label-sm label-success" %>
-                                            <%= link_to '削除' [:edit, :admin, user], class: "label label-sm label-success" %>
+                                            <%= link_to '編集' ,[:edit, :admin, user], class: "label label-sm label-success" %>
+                                            <%= link_to '削除' ,[:admin, user], method: :delete, class: "label label-sm label-success" %>
                                         </td>
                                     </tr>
                                     <% end %>
