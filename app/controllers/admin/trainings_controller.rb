@@ -36,6 +36,10 @@ class Admin::TrainingsController < AdminController
 
   def destroy
     @training = Training.find_by_id(params[:id])
+    if @training.deleteable?
+      flash[:notice] = ["error", "このデータはメニューで扱っているため, 削除できません。"]
+      return redirect_to action: :index
+    end
     @training.destroy
     flash[:notice] = ["success", "削除しました。"]
     redirect_to admin_trainings_path
