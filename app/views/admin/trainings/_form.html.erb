@@ -8,8 +8,8 @@
 
 <div class="form-group form-md-line-input">
     <label class="col-md-2 control-label">トレーニング詳細<span class="required">*</span></label>
-    <div class="col-md-4">
-        <%= f.text_field :description, class: "form-control",placeholder: "トレーニング詳細" %>
+    <div class="col-md-5">
+        <%= f.text_area :description, class: "form-control maxlength-handler", size: "20x8" ,placeholder: "トレーニング詳細" %>
         <div class="form-control-focus"> </div>
     </div>
 </div>
