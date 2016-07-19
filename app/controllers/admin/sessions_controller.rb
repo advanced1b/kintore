@@ -14,7 +14,7 @@ class Admin::SessionsController < AdminController
       redirect_to admin_menus_path
     else
       Rails.logger.info("[Login Fail] #{params[:login]} from #{request.remote_ip} at #{Time.now.to_s(:db)}")
-      flash.now[:notice] = ["error", "指定したアカウントは存在しません。"]
+      flash[:notice] = ["error", "指定したアカウントは存在しません。"]
       render :login, layout: false
     end
 
