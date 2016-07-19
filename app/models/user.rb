@@ -46,7 +46,7 @@ class User < ActiveRecord::Base
     menu = menu.where(condition_body_type: self.body_type)
 
     if menu.present?
-      self.menus << menu.first
+      self.menus << menu
     else
       return true
     end

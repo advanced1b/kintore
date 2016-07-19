@@ -25,6 +25,7 @@
 
 
     <div class="container">
+        <% if @user.term == 1 %>
         <h1>メニュー名 <%= @user.menus.first.try(:name) %></h1>
         <div id="va-accordion" class="va-container">
             <div class="va-wrapper" style="min-height: 100px;">
@@ -40,7 +41,7 @@
                         <h3 class="va-title"><%= training.name %></h3>
                         <div class="va-content">
                             <ul>
-                                <li><a class="inline" href="#inline-content_<%= index %>">説明</a></li>
+                                <li><a class="inline" href="#-inlinecontent_<%= index %>">説明</a></li>
                                 <li><a href="<%= training.try(:url) %>" class="youtube" title=""> 動画 </a></li>
                                 <% if training.url2.present? %>
                                     <li><a href="<%= training.try(:url2) %>" class="youtube" title=""> 動画 </a></li>
@@ -53,6 +54,158 @@
                 <% end %>
             </div>
         </div>
+        <% elsif @user.term == 2 %>
+
+        <h1>メニュー名 <%= @user.menus[0].try(:name) %></h1>
+        <div id="va-accordion" class="va-container">
+            <div class="va-wrapper" style="min-height: 100px;">
+                <% if @trainings_first.present? %>
+                    <% @trainings_first.each_with_index do |training,index| %>
+                    <div style="display: none;">
+                        <section id="inline-content_<%= index %>">
+                            <p class="description"><%= training.try(:description) %></p>
+                        </section>
+                    </div>
+
+                    <div class="va-slice va-slice-1">
+                        <h3 class="va-title"><%= training.name %></h3>
+                        <div class="va-content">
+                            <ul>
+                                <li><a class="inline" href="#-inlinecontent_<%= index %>">説明</a></li>
+                                <li><a href="<%= training.try(:url) %>" class="youtube" title=""> 動画 </a></li>
+                                <% if training.url2.present? %>
+                                    <li><a href="<%= training.try(:url2) %>" class="youtube" title=""> 動画 </a></li>
+                                <% end %>
+                                <li><a href="#">閉じる</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
+
+        <h1>メニュー名 <%= @user.menus[1].try(:name) %></h1>
+        <div id="va-accordion" class="va-container">
+            <div class="va-wrapper" style="min-height: 100px;">
+                <% if @trainings_second.present? %>
+                    <% @trainings_second.each_with_index do |training,index| %>
+                    <div style="display: none;">
+                        <section id="inline-content_<%= index %>">
+                            <p class="description"><%= training.try(:description) %></p>
+                        </section>
+                    </div>
+
+                    <div class="va-slice va-slice-1">
+                        <h3 class="va-title"><%= training.name %></h3>
+                        <div class="va-content">
+                            <ul>
+                                <li><a class="inline" href="#-inlinecontent_<%= index %>">説明</a></li>
+                                <li><a href="<%= training.try(:url) %>" class="youtube" title=""> 動画 </a></li>
+                                <% if training.url2.present? %>
+                                    <li><a href="<%= training.try(:url2) %>" class="youtube" title=""> 動画 </a></li>
+                                <% end %>
+                                <li><a href="#">閉じる</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
+        <% else %>
+
+
+        <h1>メニュー名 <%= @user.menus[0].try(:name) %></h1>
+        <div id="va-accordion" class="va-container">
+            <div class="va-wrapper" style="min-height: 100px;">
+                <% if @trainings_first.present? %>
+                    <% @trainings_first.each_with_index do |training,index| %>
+                    <div style="display: none;">
+                        <section id="inline-content_<%= index %>">
+                            <p class="description"><%= training.try(:description) %></p>
+                        </section>
+                    </div>
+
+                    <div class="va-slice va-slice-1">
+                        <h3 class="va-title"><%= training.name %></h3>
+                        <div class="va-content">
+                            <ul>
+                                <li><a class="inline" href="#-inlinecontent_<%= index %>">説明</a></li>
+                                <li><a href="<%= training.try(:url) %>" class="youtube" title=""> 動画 </a></li>
+                                <% if training.url2.present? %>
+                                    <li><a href="<%= training.try(:url2) %>" class="youtube" title=""> 動画 </a></li>
+                                <% end %>
+                                <li><a href="#">閉じる</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
+
+        <h1>メニュー名 <%= @user.menus[1].try(:name) %></h1>
+        <div id="va-accordion" class="va-container">
+            <div class="va-wrapper" style="min-height: 100px;">
+                <% if @trainings_second.present? %>
+                    <% @trainings_second.each_with_index do |training,index| %>
+                    <div style="display: none;">
+                        <section id="inline-content_<%= index %>">
+                            <p class="description"><%= training.try(:description) %></p>
+                        </section>
+                    </div>
+
+                    <div class="va-slice va-slice-1">
+                        <h3 class="va-title"><%= training.name %></h3>
+                        <div class="va-content">
+                            <ul>
+                                <li><a class="inline" href="#-inlinecontent_<%= index %>">説明</a></li>
+                                <li><a href="<%= training.try(:url) %>" class="youtube" title=""> 動画 </a></li>
+                                <% if training.url2.present? %>
+                                    <li><a href="<%= training.try(:url2) %>" class="youtube" title=""> 動画 </a></li>
+                                <% end %>
+                                <li><a href="#">閉じる</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
+
+
+        <h1>メニュー名 <%= @user.menus[2].try(:name) %></h1>
+        <div id="va-accordion" class="va-container">
+            <div class="va-wrapper" style="min-height: 100px;">
+                <% if @trainings_third.present? %>
+                    <% @trainings_third.each_with_index do |training,index| %>
+                    <div style="display: none;">
+                        <section id="inline-content_<%= index %>">
+                            <p class="description"><%= training.try(:description) %></p>
+                        </section>
+                    </div>
+
+                    <div class="va-slice va-slice-1">
+                        <h3 class="va-title"><%= training.name %></h3>
+                        <div class="va-content">
+                            <ul>
+                                <li><a class="inline" href="#-inlinecontent_<%= index %>">説明</a></li>
+                                <li><a href="<%= training.try(:url) %>" class="youtube" title=""> 動画 </a></li>
+                                <% if training.url2.present? %>
+                                    <li><a href="<%= training.try(:url2) %>" class="youtube" title=""> 動画 </a></li>
+                                <% end %>
+                                <li><a href="#">閉じる</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
+
+        <% end %>
+
     </div>
 
     <%= javascript_include_tag 'user' %>
@@ -77,7 +230,7 @@
                 });
             });
 
-            $('#va-accordion').vaccordion({
+            $('.va-container').vaccordion({
                 visibleSlices   : 5,
                 expandedHeight  : 250,
                 animOpacity     : 0.1,
