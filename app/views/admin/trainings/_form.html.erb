@@ -37,7 +37,7 @@
         <div class="md-radio-inline">
 
             <div class="md-radio">
-                <%= f.radio_button :part, PART[:arm], checked: "checked",class: "md-radiobtn" %>
+                <%= f.radio_button :part, PART[:arm], checked: @training.try(:part) == PART[:arm],class: "md-radiobtn" %>
                 <label for="training_part_1">
                     <span></span>
                     <span class="check"></span>
@@ -45,7 +45,7 @@
                 </label>
             </div>
             <div class="md-radio">
-                <%= f.radio_button :part, PART[:shoulder], checked: "checked",class: "md-radiobtn" %>
+                <%= f.radio_button :part, PART[:shoulder], checked: @training.try(:part) == PART[:shoulder],class: "md-radiobtn" %>
                 <label for="training_part_2">
                     <span></span>
                     <span class="check"></span>
@@ -53,7 +53,7 @@
                 </label>
             </div>
             <div class="md-radio">
-                <%= f.radio_button :part, PART[:bust], checked: "checked",class: "md-radiobtn" %>
+                <%= f.radio_button :part, PART[:bust], checked: @training.try(:part) == PART[:bust],class: "md-radiobtn" %>
                 <label for="training_part_3">
                     <span></span>
                     <span class="check"></span>
@@ -62,7 +62,7 @@
             </div>
 
             <div class="md-radio">
-                <%= f.radio_button :part, PART[:back], checked: "checked",class: "md-radiobtn" %>
+                <%= f.radio_button :part, PART[:back], checked: @training.try(:part) == PART[:back],class: "md-radiobtn" %>
                 <label for="training_part_4">
                     <span></span>
                     <span class="check"></span>
@@ -70,7 +70,7 @@
                 </label>
             </div>
             <div class="md-radio">
-                <%= f.radio_button :part, PART[:abs], checked: "checked",class: "md-radiobtn" %>
+                <%= f.radio_button :part, PART[:abs], checked: @training.try(:part) == PART[:abs],class: "md-radiobtn" %>
                 <label for="training_part_5">
                     <span></span>
                     <span class="check"></span>
@@ -78,7 +78,7 @@
                 </label>
             </div>
             <div class="md-radio">
-                <%= f.radio_button :part, PART[:leg], checked: "checked",class: "md-radiobtn" %>
+                <%= f.radio_button :part, PART[:leg], checked: @training.try(:part) == PART[:leg],class: "md-radiobtn" %>
                 <label for="training_part_6">
                     <span></span>
                     <span class="check"></span>
