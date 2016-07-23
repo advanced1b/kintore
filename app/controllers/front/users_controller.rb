@@ -5,6 +5,7 @@ class Front::UsersController < FrontController
   def show
     @user = User.find_by_id(params[:id])
     @trainings = Menu.find_by_id(@user.menus[0].id).trainings if @user.menus.present?
+    @random
 
     if @user.term == 2
       @trainings_first  = Menu.find_by_id(@user.menus[0].id).trainings

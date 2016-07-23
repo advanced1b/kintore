@@ -13,4 +13,6 @@ module ApplicationHelper
     return "/assets/javascripts/#{new_path}" if new_path.end_with?('.js')
     "/assets/stylesheets/#{new_path}" if new_path.end_with?('.css')
   end
+
+
 end

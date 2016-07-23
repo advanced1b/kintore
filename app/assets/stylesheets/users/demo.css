@@ -1,23 +1,31 @@
 @import url('users/reset.css');
 
+#wappar{
+	width:1350px;
+}
+
+.contants{
+	height:600px;
+}
 header{
-    height: 50px;
+    height: 75px;
     margin: 0px 0px 0px 0px;
-    background-image: url("technology.jpg");
+    background-image: url(/assets/technology.jpg);
     background-size: cover;
     padding-top: 20px;
     padding-bottom: 10px;
     border-width: thick;
-    border-color: #0000;
+    border-color: #000;
     border-style: outset;
 }
 
 #header{
-    font-size: 20px;
+    font-size: 25px;
     text-align: right;
-    padding-right: 10px;
+    padding-right: 20px;
     float:right;
     width :50%;
+    color: #fff;
 }
 
 #logo{
@@ -25,20 +33,23 @@ header{
     width: 50%;
 }
 
-#header>a{
-    color: #000;
+a:link{
+    color: #fff;
+    text-decoration: none;
+}
+
+a:visited{
+  color: #fff;
+  text-decoration: none;
 }
 
 body{
-	/*background:#f9e830 url(../images/pattern.png) repeat top left;*/
 	color:#fff;
 	font-family: 'PT Sans Narrow', Arial, sans-serif;
 	font-size:12px;
+	height: 100%;
 }
-a{
-	color:#000;
-	text-decoration:none;
-}
+
 .clr{
 	clear:both;
 }
@@ -46,7 +57,10 @@ a{
 	width:100%;
 	position:relative;
 	z-index:100;
-	margin:40px auto;
+	margin:25px auto auto 0px;
+	min-height: 100%; 
+	height: auto !important;
+	height: 100%;
 }
 .content {
 	width:1000px;
@@ -65,6 +79,46 @@ h1{
 	position:relative;
 }
 
-#inline-content{
-	color:#000;
+.description{
+	font-size: 35px;
+}
+
+#footer{
+    /*text-transform:uppercase;*/
+	padding:30px 0px 60px 0px;
+	height: 50px;
+	clear:both;
+	width: 100%;
+	background-color: #666666;
+	bottom: 0;
+}
+.kara{
+	float:left;
+	margin: 20px auto 10px auto;
+	width:10%;
+}
+.mail{
+	float: left;
+	margin: 20px auto 10px auto;
+	width:35%;
+}
+
+.mail>a{
+	font-size: 30px;
+	padding: 15px 45px 15px 45px;
+	border-width: 2px 2px 2px 2px;
+    border-color: #fff;
+    border-style: outset;
+}
+
+.teikyo{
+	float:left;
+	margin: 30px auto 10px auto;
+	color: #000;
+}
+
+.teikyo>a{
+	font-size: 15px;
+	color:#DCDCDC;
+	opacity: 0.8;
 }

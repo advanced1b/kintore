@@ -1,7 +1,28 @@
 /* Vertical Accordion Style */
 .va-container{
 	position:relative;
-	margin:40px auto 0 auto;
+	float: right;
+	margin:40px 50px 100px auto;
+	width: 65% !important;
+
+
+}
+
+#menue{
+	float: left;
+	width: 25%;
+	height: auto;
+	border-style: solid;
+	border-width: 3px;
+	padding: 10px 5px 10px 10px;
+	margin-top: 40px;
+	margin-left: 50px;
+	font-size: 30px;
+	color: #000; 
+}
+
+.menue_data{
+	margin: 5px 5px 5px 5px; 
 }
 .va-wrapper{
 	width:100%;
@@ -17,48 +38,15 @@
 	left:0px;
 	overflow:hidden;
 }
-.va-slice-1{
-	background:#000 url("images/users/1.jpg") no-repeat center center;
-}
-.va-slice-2{
-	background:#000 url(images/users/2.jpg) no-repeat center center;
-}
-.va-slice-3{
-	background:#000 url(images/users/3.jpg) no-repeat center center;
-}
-.va-slice-4{
-	background:#000 url(images/users/4.jpg) no-repeat center center;
-}
-.va-slice-5{
-	background:#000 url(images/users/5.jpg) no-repeat center center;
-}
-.va-slice-6{
-	background:#000 url(images/users/6.jpg) no-repeat center center;
-}
-.va-slice-7{
-	background:#000 url(images/users/7.jpg) no-repeat center center;
-}
+
+/*.va-slice-1{
+	background:#000 url(/assets/3.jpg) no-repeat center center;
+}*/
+
 .va-slice-color-1{
 	background-color:#97c5eb;
 }
-.va-slice-color-2{
-	background-color:#68ace5;
-}
-.va-slice-color-3{
-	background-color:#0072cf;
-}
-.va-slice-color-4{
-	background-color:#0039a6;
-}
-.va-slice-color-5{
-	background-color:#00338e;
-}
-.va-slice-color-6{
-	background-color:#002c76;
-}
-.va-slice-color-7{
-	background-color:#002144;
-}
+
 .va-title{
 	font-family: 'Open Sans Condensed', sans-serif;
 	text-transform:uppercase;
@@ -99,7 +87,7 @@
 .va-nav span{
 	width:40px;
 	height:25px;
-	background:transparent url(images/prev.png) no-repeat center center;
+	background:transparent url(/assets/prev.png) no-repeat center center;
 	position:absolute;
 	top:-35px;
 	left:50%;
@@ -111,7 +99,7 @@
 	z-index:100;
 }
 .va-nav span.va-nav-next{
-	background-image:url(images/next.png);
+	background-image:url(/assets/next.png);
 	top:auto;
 	bottom:-35px;
 }

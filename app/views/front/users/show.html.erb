@@ -13,8 +13,14 @@
 </head>
 
 <body>
+    <div id="wappar">
     <header>
         <table width=100%>
+            <td>
+                <div id="logo"> 
+                    <a href="#"><img src="/assets/logo.png" widht="200" height="50"></a>
+                </div>
+            </td>
             <td>
                 <div id="header">
                     <li><a href="<%= logout_path %>">ログアウト</a></li>
@@ -23,25 +29,34 @@
         </table>
     </header>
 
-
     <div class="container">
         <% if @user.term == 1 %>
+
+        <div class="contants">
         <h1>メニュー名 <%= @user.menus.first.try(:name) %></h1>
+
+        <div id="menue">
+           <%= simple_format("メニュー説明"+@user.menus.first.try(:description), :class=>"menue_data") %>
+        </div>
         <div id="va-accordion" class="va-container">
+            <div class="va-nav">
+                    <span class="va-nav-prev">Previous</span>
+                    <span class="va-nav-next">Next</span>
+                </div>
             <div class="va-wrapper" style="min-height: 100px;">
                 <% if @trainings.present? %>
                     <% @trainings.each_with_index do |training,index| %>
                     <div style="display: none;">
                         <section id="inline-content_<%= index %>">
-                            <p class="description"><%= training.try(:description) %></p>
+                            <%= simple_format(training.try(:description), :class=> "description") %>
                         </section>
                     </div>
-
-                    <div class="va-slice va-slice-1">
+                    
+                    <div class="va-slice va-slice-1" style=<%=" background-image:url(/assets/" + (@random=rand(1..5)).to_s + ".jpg) " %>>
                         <h3 class="va-title"><%= training.name %></h3>
                         <div class="va-content">
                             <ul>
-                                <li><a class="inline" href="#-inlinecontent_<%= index %>">説明</a></li>
+                                <li><a class="inline" href="#inline-content_<%= index %>">説明</a></li>
                                 <li><a href="<%= training.try(:url) %>" class="youtube" title=""> 動画 </a></li>
                                 <% if training.url2.present? %>
                                     <li><a href="<%= training.try(:url2) %>" class="youtube" title=""> 動画 </a></li>
@@ -54,24 +69,36 @@
                 <% end %>
             </div>
         </div>
+        </div>
+
         <% elsif @user.term == 2 %>
 
-        <h1>メニュー名 <%= @user.menus[0].try(:name) %></h1>
+        <div class="contants">
+        <h1>メニュー名 <%= @user.menus[0].try(:name)%></h1>
+
+        <div id="menue">
+           <%= simple_format("メニュー説明"+@user.menus.first.try(:description), :class=>"menue_data") %>
+        </div>
         <div id="va-accordion" class="va-container">
+            <div class="va-nav">
+                    <span class="va-nav-prev">Previous</span>
+                    <span class="va-nav-next">Next</span>
+                </div>
             <div class="va-wrapper" style="min-height: 100px;">
                 <% if @trainings_first.present? %>
                     <% @trainings_first.each_with_index do |training,index| %>
                     <div style="display: none;">
                         <section id="inline-content_<%= index %>">
-                            <p class="description"><%= training.try(:description) %></p>
+                            <%= simple_format(training.try(:description), :class=> "description") %>
                         </section>
                     </div>
 
-                    <div class="va-slice va-slice-1">
+                    <%= @random=rand(1..5) %>
+                    <div class="va-slice va-slice-1" style=<%=" background-image:url(/assets/" + (@random=rand(1..5)).to_s + ".jpg) " %>>
                         <h3 class="va-title"><%= training.name %></h3>
                         <div class="va-content">
                             <ul>
-                                <li><a class="inline" href="#-inlinecontent_<%= index %>">説明</a></li>
+                                <li><a class="inline" href="#inline-content_<%= index %>">説明</a></li>
                                 <li><a href="<%= training.try(:url) %>" class="youtube" title=""> 動画 </a></li>
                                 <% if training.url2.present? %>
                                     <li><a href="<%= training.try(:url2) %>" class="youtube" title=""> 動画 </a></li>
@@ -84,23 +111,34 @@
                 <% end %>
             </div>
         </div>
+        </div>
 
+        <div class="contants">
         <h1>メニュー名 <%= @user.menus[1].try(:name) %></h1>
+
+         <div id="menue">
+           <%= simple_format("メニュー説明"+@user.menus.first.try(:description), :class=>"menue_data") %>
+        </div>
         <div id="va-accordion" class="va-container">
+            <div class="va-nav">
+                    <span class="va-nav-prev">Previous</span>
+                    <span class="va-nav-next">Next</span>
+                </div>
             <div class="va-wrapper" style="min-height: 100px;">
                 <% if @trainings_second.present? %>
                     <% @trainings_second.each_with_index do |training,index| %>
                     <div style="display: none;">
                         <section id="inline-content_<%= index %>">
-                            <p class="description"><%= training.try(:description) %></p>
+                            <%= simple_format(training.try(:description), :class=> "description") %>
                         </section>
                     </div>
 
-                    <div class="va-slice va-slice-1">
+                    <%= @random=rand(1..5) %>
+                    <div class="va-slice va-slice-1" style=<%=" background-image:url(/assets/" + (@random=rand(1..5)).to_s + ".jpg) " %>>
                         <h3 class="va-title"><%= training.name %></h3>
                         <div class="va-content">
                             <ul>
-                                <li><a class="inline" href="#-inlinecontent_<%= index %>">説明</a></li>
+                                <li><a class="inline" href="#inline-content_<%= index %>">説明</a></li>
                                 <li><a href="<%= training.try(:url) %>" class="youtube" title=""> 動画 </a></li>
                                 <% if training.url2.present? %>
                                     <li><a href="<%= training.try(:url2) %>" class="youtube" title=""> 動画 </a></li>
@@ -113,25 +151,37 @@
                 <% end %>
             </div>
         </div>
+        </div>
+
+
         <% else %>
 
-
+        <div class="contants">
         <h1>メニュー名 <%= @user.menus[0].try(:name) %></h1>
+
+         <div id="menue">
+           <%= simple_format("メニュー説明"+@user.menus.first.try(:description), :class=>"menue_data") %>
+        </div>
         <div id="va-accordion" class="va-container">
+            <div class="va-nav">
+                    <span class="va-nav-prev">Previous</span>
+                    <span class="va-nav-next">Next</span>
+                </div>
             <div class="va-wrapper" style="min-height: 100px;">
                 <% if @trainings_first.present? %>
                     <% @trainings_first.each_with_index do |training,index| %>
                     <div style="display: none;">
-                        <section id="inline-content_<%= index %>">
-                            <p class="description"><%= training.try(:description) %></p>
+                       <section id="inline-content_<%= index %>">
+                            <%= simple_format(training.try(:description), :class=> "description") %>
                         </section>
                     </div>
 
-                    <div class="va-slice va-slice-1">
+                    <%= @random=rand(1..5) %>
+                    <div class="va-slice va-slice-1" style=<%=" background-image:url(/assets/" + (@random=rand(1..5)).to_s + ".jpg) " %>>
                         <h3 class="va-title"><%= training.name %></h3>
                         <div class="va-content">
                             <ul>
-                                <li><a class="inline" href="#-inlinecontent_<%= index %>">説明</a></li>
+                                <li><a class="inline" href="#inline-content_<%= index %>">説明</a></li>
                                 <li><a href="<%= training.try(:url) %>" class="youtube" title=""> 動画 </a></li>
                                 <% if training.url2.present? %>
                                     <li><a href="<%= training.try(:url2) %>" class="youtube" title=""> 動画 </a></li>
@@ -144,23 +194,34 @@
                 <% end %>
             </div>
         </div>
+        </div>
 
+        <div class="contants">
         <h1>メニュー名 <%= @user.menus[1].try(:name) %></h1>
+
+         <div id="menue">
+           <%= simple_format("メニュー説明"+@user.menus.first.try(:description), :class=>"menue_data") %>
+        </div>
         <div id="va-accordion" class="va-container">
+            <div class="va-nav">
+                    <span class="va-nav-prev">Previous</span>
+                    <span class="va-nav-next">Next</span>
+                </div>
             <div class="va-wrapper" style="min-height: 100px;">
                 <% if @trainings_second.present? %>
                     <% @trainings_second.each_with_index do |training,index| %>
                     <div style="display: none;">
-                        <section id="inline-content_<%= index %>">
-                            <p class="description"><%= training.try(:description) %></p>
+                       <section id="inline-content_<%= index %>">
+                            <%= simple_format(training.try(:description), :class=> "description") %>
                         </section>
                     </div>
 
-                    <div class="va-slice va-slice-1">
+                    <%= @random=rand(1..5) %>
+                    <div class="va-slice va-slice-1" style=<%=" background-image:url(/assets/" + (@random=rand(1..5)).to_s + ".jpg) " %>>
                         <h3 class="va-title"><%= training.name %></h3>
                         <div class="va-content">
                             <ul>
-                                <li><a class="inline" href="#-inlinecontent_<%= index %>">説明</a></li>
+                                <li><a class="inline" href="#inline-content_<%= index %>">説明</a></li>
                                 <li><a href="<%= training.try(:url) %>" class="youtube" title=""> 動画 </a></li>
                                 <% if training.url2.present? %>
                                     <li><a href="<%= training.try(:url2) %>" class="youtube" title=""> 動画 </a></li>
@@ -173,24 +234,33 @@
                 <% end %>
             </div>
         </div>
+        </div>
 
-
+        <div class="contants">
         <h1>メニュー名 <%= @user.menus[2].try(:name) %></h1>
+
+        <div id="menue">
+           <%= simple_format("メニュー説明"+@user.menus.first.try(:description), :class=>"menue_data") %>
+        </div>
         <div id="va-accordion" class="va-container">
+            <div class="va-nav">
+                    <span class="va-nav-prev">Previous</span>
+                    <span class="va-nav-next">Next</span>
+                </div>
             <div class="va-wrapper" style="min-height: 100px;">
                 <% if @trainings_third.present? %>
                     <% @trainings_third.each_with_index do |training,index| %>
                     <div style="display: none;">
-                        <section id="inline-content_<%= index %>">
-                            <p class="description"><%= training.try(:description) %></p>
+                       <section id="inline-content_<%= index %>">
+                            <%= simple_format(training.try(:description), :class=> "description") %>
                         </section>
                     </div>
 
-                    <div class="va-slice va-slice-1">
+                    <div class="va-slice va-slice-1" style=<%=" background-image:url(/assets/" + (@random=rand(1..5)).to_s + ".jpg) " %>>
                         <h3 class="va-title"><%= training.name %></h3>
                         <div class="va-content">
                             <ul>
-                                <li><a class="inline" href="#-inlinecontent_<%= index %>">説明</a></li>
+                                <li><a class="inline" href="#inline-content_<%= index %>">説明</a></li>
                                 <li><a href="<%= training.try(:url) %>" class="youtube" title=""> 動画 </a></li>
                                 <% if training.url2.present? %>
                                     <li><a href="<%= training.try(:url2) %>" class="youtube" title=""> 動画 </a></li>
@@ -203,11 +273,23 @@
                 <% end %>
             </div>
         </div>
+        </div>
 
         <% end %>
+    <footer id="footer">
+        <div class="kara">
+        </div>
+        <div class="mail" >
+        <a href="mailto:al14007@shibaura-it.ac.jp"> MAIL </a>
+        </div>
 
+        <div class="teikyo">
+            <a href="http://www.jbbf.jp/">提供　|　全国ボディビル協会</a>
+        </div>
+
+    </footer>
     </div>
-
+</div>
     <%= javascript_include_tag 'user' %>
 
     <script type="text/javascript">
@@ -224,8 +306,8 @@
                     innerHeight: true,
                     initialWidth: 300,
                     initialHeight: 150,
-                    width: 300,
-                    height: 150,
+                    width: 500,
+                    height: 400,
                     opacity: 1.0
                 });
             });
@@ -236,8 +318,7 @@
                 animOpacity     : 0.1,
                 contentAnimSpeed: 100
             });
-
-
+            
         });
     </script>
 </body>
