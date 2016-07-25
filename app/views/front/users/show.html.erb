@@ -36,7 +36,7 @@
         <h1>メニュー名 <%= @user.menus.first.try(:name) %></h1>
 
         <div id="menue">
-           <%= simple_format("メニュー説明"+@user.menus.first.try(:description), :class=>"menue_data") %>
+           <%= simple_format("メニュー説明 <br>"+@user.menus.first.try(:description), :class=>"menue_data") %>
         </div>
         <div id="va-accordion" class="va-container">
             <div class="va-nav">
